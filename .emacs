@@ -24,7 +24,7 @@
 
 ; change place for backups
 (setq backup-directory-alist `(("." . "~/.emacs_backups")))
-(setq auto-save-default nil)
+(setq auto-save-file-name-transforms `((".*" "~/.emacs_backups/" t)))
 
 ; enables parentheses highlighting
 (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -56,6 +56,8 @@
 (tool-bar-mode -1)
 ; jump to definition
 (dumb-jump-mode 1)
+; highlight words
+(global-hi-lock-mode 1) ;;; M-s h . — highlight symbol at cursor, M-s h u [RET] — unhighlight
 
 ; add showing filename
 (defun show-file-name ()
