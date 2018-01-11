@@ -58,6 +58,9 @@
 (dumb-jump-mode 1)
 ; highlight words
 (global-hi-lock-mode 1) ;;; M-s h . — highlight symbol at cursor, M-s h u [RET] — unhighlight
+;cmake-mode
+(setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
+(require 'cmake-mode)
 
 ; add showing filename
 (defun show-file-name ()
@@ -80,3 +83,5 @@
 
 ; bridges emacs' copy/paste and system's copy/paste
 (load-file "~/.emacs.d/xclip.el")
+
+(setq-default indent-tabs-mode nil)
